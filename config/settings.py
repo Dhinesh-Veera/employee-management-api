@@ -120,6 +120,11 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Employee Management API",
+    "DESCRIPTION": "Employee Management System with Weather Integration",
+    "VERSION": "1.0.0",
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

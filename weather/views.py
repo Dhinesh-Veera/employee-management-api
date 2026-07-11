@@ -7,7 +7,10 @@ from drf_spectacular.utils import (extend_schema, OpenApiParameter, OpenApiRespo
 
 from .services import WeatherService
 
+
 # Create your views here.
+
+
 class WeatherAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -28,12 +31,12 @@ class WeatherAPIView(APIView):
             500: OpenApiResponse(description="Weather service error."),
         },
     )
-
     def get(self, request):
         city = request.query_params.get("city")
         print(city)
         if not city:
-            return Response({"success": False, "message": "City parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"success": False, "message": "City parameter is required"},
+                            status=status.HTTP_400_BAD_REQUEST)
         data = WeatherService.get_current_weather(city)
 
         if data["success"]:

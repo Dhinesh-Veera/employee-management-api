@@ -1,22 +1,85 @@
 # Employee Management API
 
+## Overview
+
+A Django REST Framework application for employee management with external weather integration.
+
 ## Features
 
-- Employee CRUD
+- Employee CRUD APIs
 - JWT Authentication
 - Weather API Integration
+- Docker & Docker Compose
 - PostgreSQL
-- Docker Compose
-- Swagger Documentation
+- GitHub Actions CI
+- Swagger/OpenAPI Documentation
+- Health Check API
+- Structured Logging
+- Unit Testing
 
-## Run
+## Tech Stack
+
+- Python 3.12
+- Django
+- Django REST Framework
+- PostgreSQL
+- Docker
+- Docker Compose
+- GitHub Actions
+- drf-spectacular
+
+## Project Structure
+
+config/
+employees/
+weather/
+common/
+
+## Setup
+
+git clone ...
+
+pip install -r requirements.txt
+
+cp .env.example .env
+
+python manage.py migrate
+
+python manage.py runserver
+
+## Docker
 
 docker compose up --build
 
-## Migrate
+## API Documentation
 
-docker compose exec web python manage.py migrate
+/api/docs/
 
-## Create Superuser
+/api/schema/
 
-docker compose exec web python manage.py createsuperuser
+## Health API
+
+GET /health/
+
+## CI/CD
+
+GitHub Actions automatically:
+
+- Installs dependencies
+- Runs tests
+- Validates project
+
+## Author
+
+Dhinesh V
+
+## Example APIs
+
+- Create Employee
+  -     POST /api/employees/
+- Get Employees
+  -     GET /api/employees/
+- Weather
+  -     GET /api/weather/?city=Chennai
+- Health
+  -     GET /health/

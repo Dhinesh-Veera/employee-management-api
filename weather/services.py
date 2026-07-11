@@ -18,12 +18,10 @@ class WeatherService:
             "units": "metric"
         }
         try:
-            print(settings.WEATHER_API_KEY)
-            response = requests.get(WeatherService.BASE_URL, params=params, timeout=10)
-            print(response.status_code)
-            print(response.text)
-            response.raise_for_status()
 
+            response = requests.get(WeatherService.BASE_URL, params=params, timeout=10)
+
+            response.raise_for_status()
 
             weather_data = response.json()
             logger.info("Weather data fetched successfully.")

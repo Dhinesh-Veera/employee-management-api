@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Employee, Department
-from .serializers import  DepartmentSerializer, EmployeeSerializer
+from .serializers import DepartmentSerializer, EmployeeSerializer
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
@@ -9,8 +9,8 @@ from .pagination import EmployeePagination
 from rest_framework.response import Response
 from rest_framework import status
 
-# Create your views here.
 
+# Create your views here.
 
 class EmployeeViewSet(ModelViewSet):
     queryset = Employee.objects.all()
@@ -30,7 +30,8 @@ class EmployeeViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        return Response({"success": True, "message": "Employee created successfully", "data": serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({"success": True, "message": "Employee created successfully", "data": serializer.data},
+                        status=status.HTTP_201_CREATED)
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop("partial", False)
@@ -49,7 +50,9 @@ class EmployeeViewSet(ModelViewSet):
         instance.delete()
 
         return Response({"success": True, "message": "Employee deleted successfully."}, status=status.HTTP_200_OK)
+
+
 class DepartmentViewSet(ModelViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
-    #permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
