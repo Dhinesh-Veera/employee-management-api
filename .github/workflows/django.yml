@@ -20,7 +20,7 @@ jobs:
         env:
           POSTGRES_DB: employee_db
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: admin123dd
+          POSTGRES_PASSWORD: admin123
 
         ports:
           - 5432:5432
