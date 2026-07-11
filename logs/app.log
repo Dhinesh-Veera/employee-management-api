@@ -1,0 +1,73 @@
+
+2026-07-10 00:24:08,182 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 00:24:08,445 | ERROR | weather.services | Weather API request failed.
+Traceback (most recent call last):
+  File "C:\Users\Dhinesh Sangeetha\PycharmProjects\employee_management\weather\services.py", line 23, in get_current_weather
+    response.raise_for_status()
+  File "C:\Users\Dhinesh Sangeetha\PycharmProjects\venv\lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=fd0b19b4bd14cf9d71619305d40d2765&units=metric
+2026-07-10 00:24:08,452 | ERROR | django.request | Internal Server Error: /api/weather/
+2026-07-10 00:39:01,705 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 00:49:57,729 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 00:56:51,014 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 00:56:53,310 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 00:57:11,246 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 00:57:11,539 | INFO | weather.services | Weather data fetched successfully.
+2026-07-10 01:01:43,181 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:01:43,182 | INFO | weather.services | Weather data fetched successfully.
+2026-07-10 01:02:11,709 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:02:11,710 | INFO | weather.services | Weather data fetched successfully.
+2026-07-10 01:02:11,711 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:02:11,711 | ERROR | weather.services | Weather API request failed with timeout error
+Traceback (most recent call last):
+  File "C:\Users\Dhinesh Sangeetha\PycharmProjects\employee_management\weather\services.py", line 22, in get_current_weather
+    response = requests.get(WeatherService.BASE_URL, params=params, timeout=10)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1092, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1096, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1151, in _execute_mock_call
+    raise effect
+requests.exceptions.Timeout
+2026-07-10 01:02:26,069 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:02:26,070 | INFO | weather.services | Weather data fetched successfully.
+2026-07-10 01:02:26,072 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:02:26,072 | ERROR | weather.services | Weather API request failed with timeout error
+Traceback (most recent call last):
+  File "C:\Users\Dhinesh Sangeetha\PycharmProjects\employee_management\weather\services.py", line 22, in get_current_weather
+    response = requests.get(WeatherService.BASE_URL, params=params, timeout=10)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1092, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1096, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Dhinesh Sangeetha\AppData\Local\Programs\Python\Python39\lib\unittest\mock.py", line 1151, in _execute_mock_call
+    raise effect
+requests.exceptions.Timeout
+2026-07-10 01:16:17,050 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 01:16:19,795 | INFO | weather.services | Fetching weather for city: Chennai
+2026-07-10 01:16:20,089 | INFO | weather.services | Weather data fetched successfully.
+2026-07-10 01:16:28,424 | WARNING | config.exception_handler | Handled exception: Authentication credentials were not provided. | View: <weather.views.WeatherAPIView object at 0x000001FF4E556970>
+2026-07-10 01:16:28,428 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 01:16:54,547 | WARNING | config.exception_handler | Handled exception: Authentication credentials were not provided. | View: <employees.views.EmployeeViewSet object at 0x000001FF4DC902E0>
+2026-07-10 01:16:54,548 | WARNING | django.request | Unauthorized: /api/employees/99999/
+2026-07-10 01:17:07,473 | WARNING | config.exception_handler | Handled exception: No Employee matches the given query. | View: <employees.views.EmployeeViewSet object at 0x000001FF4E415220>
+2026-07-10 01:17:07,474 | WARNING | django.request | Not Found: /api/employees/99999/
+2026-07-10 01:24:55,521 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 01:27:15,805 | WARNING | config.exception_handler | Handled exception: Authentication credentials were not provided. | View: <weather.views.WeatherAPIView object at 0x0000011D3143E220>
+2026-07-10 01:27:15,811 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 01:28:19,331 | WARNING | config.exception_handler | Handled exception: Authentication credentials were not provided. | View: <weather.views.WeatherAPIView object at 0x0000011D3159B6A0>
+2026-07-10 01:28:19,336 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 01:30:13,105 | WARNING | config.exception_handler | Handled exception: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is expired', code='token_not_valid')}]} | View: <weather.views.WeatherAPIView object at 0x0000011D3159FEB0>
+2026-07-10 01:30:13,108 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 01:30:21,137 | WARNING | config.exception_handler | Handled exception: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is expired', code='token_not_valid')}]} | View: <employees.views.EmployeeViewSet object at 0x0000011D31326220>
+2026-07-10 01:30:21,138 | WARNING | django.request | Unauthorized: /api/employees/99999/
+2026-07-10 01:30:39,644 | WARNING | config.exception_handler | Handled exception: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is expired', code='token_not_valid')}]} | View: <weather.views.WeatherAPIView object at 0x0000011D31326D90>
+2026-07-10 01:30:39,644 | WARNING | django.request | Unauthorized: /api/weather/
+2026-07-10 01:32:32,698 | INFO | django.utils.autoreload | C:\Users\Dhinesh Sangeetha\PycharmProjects\employee_management\weather\views.py changed, reloading.
+2026-07-10 01:32:35,302 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-10 01:32:54,806 | INFO | django.utils.autoreload | C:\Users\Dhinesh Sangeetha\PycharmProjects\employee_management\weather\views.py changed, reloading.
+2026-07-10 01:32:55,577 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-11 11:20:21,520 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-11 11:23:29,561 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
+2026-07-11 11:59:47,415 | INFO | django.utils.autoreload | Watching for file changes with StatReloader
