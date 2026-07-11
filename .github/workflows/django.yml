@@ -13,6 +13,23 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+
+        env:
+          POSTGRES_DB: employee_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin123dd
+
+        ports:
+          - 5432:5432
+
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
 
@@ -30,5 +47,12 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Tests
+        env:
+          DB_NAME: employee_db
+          DB_USER: postgres
+          DB_PASSWORD: admin123
+          DB_HOST: localhost
+          DB_PORT: 5432
+          WEATHER_API_KEY: dummy_key
         run: |
           python manage.py test
