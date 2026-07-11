@@ -83,3 +83,42 @@ Dhinesh V
   -     GET /api/weather/?city=Chennai
 - Health
   -     GET /health/
+
+
+## Architecture Diagram
+                Client
+                   │
+                   ▼
+          Django REST API
+         ┌──────┴──────┐
+         ▼             ▼
+ Employees      Weather Service
+         │             │
+         ▼             ▼
+ PostgreSQL     OpenWeather API
+
+         ▲
+         │
+ Docker Compose
+
+         ▲
+         │
+ GitHub Actions
+
+ ## Swagger UI
+![img.png](img.png)
+![img_1.png](img_1.png)
+
+ ## GitHub Actions passing
+![img_2.png](img_2.png)
+
+## Docker containers running
+![img_3.png](img_3.png)
+
+## Health endpoint
+![img_4.png](img_4.png)
+
+## API Examples
+- GET /health/
+  - Response
+    -   {"status": "healthy"}
