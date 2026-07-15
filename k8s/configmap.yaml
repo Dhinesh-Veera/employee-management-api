@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: employee-config 
+  namespace: employee-management
+
+data:
+  DB_NAME: employee_db
+  DB_USER: postgres
+  DB_HOST: postgres-service
+  DB_PORT: "5432"
